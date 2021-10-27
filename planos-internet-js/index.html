@@ -3,9 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css">
         <title>Internet Já</title>
-        <script src="./js/offers.js"></script>
-        <script src="./js/main.js"></script>
     </head>
     <body>
         <header>
@@ -28,6 +27,8 @@
                             name="cep"
                             id="cep"
                             autofocus
+                            onblur="pesquisaCep(this.value)"
+                            onkeypress="mascaraCep()"
                             maxlength="9"
                             required
                         />
@@ -104,6 +105,10 @@
                     </div>
                 </div>
             </fieldset>
+            <a href="offers.html"><button class=btn-success>Avançar</button></a>
+
         </main>
+        <script src="./js/offers.js"></script>
+        <script src="./js/main.js"></script>
     </body>
 </html>
