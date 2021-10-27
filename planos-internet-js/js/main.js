@@ -6,14 +6,16 @@ function newElement(element, elementClass, text) {
     return e;
 }
 
-for (const offer of offers.userData.offers) {
-    const div = newElement("div", "offer-item");
-    const h2 = newElement("h2", "offer-name", offer.name);
-    const p = newElement("p", "offer-price", `R$ ${offer.price}`);
-    div.appendChild(h2);
-    div.appendChild(p);
+function showOffers() {
+    for (const offer of offers.userData.offers) {
+        const div = newElement("div", "offer-item");
+        const h2 = newElement("h2", "offer-name", offer.name);
+        const p = newElement("p", "offer-price", `R$ ${offer.price}`);
+        div.appendChild(h2);
+        div.appendChild(p);
 
-    document.getElementById("offers-list").appendChild(div);
+        document.getElementById("offers-list").appendChild(div);
+    }
 }
 
 //-------------------CEP SEARCH-----------------------
@@ -52,7 +54,7 @@ function pesquisaCep(valor) {
     if (cep != "") {
         //Expressão regular para validar o CEP.
         var validacep = /^[0-9]{8}$/;
-         //Valida o formato do CEP.
+        //Valida o formato do CEP.
         if (validacep.test(cep)) {
             //Preenche os campos com "..." enquanto consulta webservice.
             document.getElementById("endereco").value = "...";
@@ -60,7 +62,7 @@ function pesquisaCep(valor) {
             document.getElementById("cidade").value = "...";
             document.getElementById("estado").value = "...";
             var script = document.createElement("script");
-             //Sincroniza com o callback.
+            //Sincroniza com o callback.
             script.src = "https://viacep.com.br/ws/" + cep + "/json/?callback=meuCallback";
             //Insere script no documento e carrega o conteúdo.
             document.body.appendChild(script);
