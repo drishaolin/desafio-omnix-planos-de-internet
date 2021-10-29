@@ -7,6 +7,8 @@ function newElement(element, elementClass, text) {
 }
 
 function showOffers() {
+    console.log(localStorage.getItem("Address"));
+    document.getElementById("selected-address").innerText = localStorage.getItem("Address");
     for (const offer of offers.userData.offers) {
         const div = newElement("div", "offer-item");
         const h2 = newElement("h2", "offer-name", offer.name);
@@ -74,4 +76,15 @@ function pesquisaCep(valor) {
         //cep sem valor, limpa formulário.
         limpaFormulárioCep();
     }
+}
+
+//-----------------------ON FORM SUBMIT, GET FULL ADDRESS------------------------
+function getFullAddress() {
+    const fullAddress = `
+    ${document.getElementById("endereco").value} - ${document.getElementById("bairro").value}, ${
+        document.getElementById("cidade").value
+    } - ${document.getElementById("estado").value}
+    `;
+    localStorage.setItem("Address", fullAddress);
+    window.open('../offers.html');
 }

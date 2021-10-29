@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style.css" />
         <title>Internet Já</title>
     </head>
     <body>
@@ -16,97 +16,96 @@
                 <h2>Faça seu cadastro!</h2>
                 <p>É simples, rápido e GRÁTIS!</p>
             </header>
+            <form onsubmit="getFullAddress()">
+                <fieldset class="form-adress">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="cep"><b>CEP</b></label>
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="cep"
+                                id="cep"
+                                autofocus
+                                onblur="pesquisaCep(this.value)"
+                                onkeypress="mascaraCep()"
+                                maxlength="9"
+                                required
+                            />
+                        </div>
 
-            <fieldset class="form-adress">
-                <div class="form-row">
-                    <div class="form-col">
-                        <label for="cep"><b>CEP</b></label>
-                        <input
-                            class="form-input"
-                            type="text"
-                            name="cep"
-                            id="cep"
-                            autofocus
-                            onblur="pesquisaCep(this.value)"
-                            onkeypress="mascaraCep()"
-                            maxlength="9"
-                            required
-                        />
-                    </div>
+                        <div class="form-col">
+                            <label for="estado"><strong>Estado</strong></label>
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="estado"
+                                id="estado"
+                                required
+                                readonly
+                            />
+                        </div>
 
-                    <div class="form-col">
-                        <label for="estado"><strong>Estado</strong></label>
-                        <input
-                            class="form-input"
-                            type="text"
-                            name="estado"
-                            id="estado"
-                            required
-                            readonly
-                        />
+                        <div class="form-col">
+                            <label for="cidade"><strong>Cidade</strong></label>
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="cidade"
+                                id="cidade"
+                                required
+                                readonly
+                            />
+                        </div>
                     </div>
-
-                    <div class="form-col">
-                        <label for="cidade"><strong>Cidade</strong></label>
+                    <div class="form-row">
+                        <label for="endereco"><strong>Endereço</strong></label>
                         <input
                             class="form-input"
                             type="text"
-                            name="cidade"
-                            id="cidade"
-                            required
-                            readonly
-                        />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <label for="endereco"><strong>Endereço</strong></label>
-                    <input
-                        class="form-input"
-                        type="text"
-                        name="endereco"
-                        id="endereco"
-                        required
-                        readonly
-                    />
-                </div>
-                <div class="form-row">
-                    <div class="form-col">
-                        <label for="numero-endereco"><b>Numero</b></label>
-                        <input
-                            class="form-input"
-                            type="text"
-                            name="numero-endereco"
-                            id="numero-endereco"
-                            required
-                        />
-                    </div>
-
-                    <div class="form-col">
-                        <label for="complemento-endereco"><b>Complemento</b></label>
-                        <input
-                            class="form-input"
-                            type="text"
-                            name="complemento-endereco"
-                            id="complemento-endereco"
-                            required
-                        />
-                    </div>
-
-                    <div class="form-col">
-                        <label for="bairro"><strong>Bairro</strong></label>
-                        <input
-                            class="form-input"
-                            type="text"
-                            name="bairro"
-                            id="bairro"
+                            name="endereco"
+                            id="endereco"
                             required
                             readonly
                         />
                     </div>
-                </div>
-            </fieldset>
-            <a href="offers.html"><button class=btn-success>Avançar</button></a>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="numero-endereco"><b>Numero</b></label>
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="numero-endereco"
+                                id="numero-endereco"
+                                required
+                            />
+                        </div>
 
+                        <div class="form-col">
+                            <label for="complemento-endereco"><b>Complemento</b></label>
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="complemento-endereco"
+                                id="complemento-endereco"
+                            />
+                        </div>
+
+                        <div class="form-col">
+                            <label for="bairro"><strong>Bairro</strong></label>
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="bairro"
+                                id="bairro"
+                                required
+                                readonly
+                            />
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit" onclick="getFullAddress()" class="btn-success">Avançar</button>
+            </form>
         </main>
         <script src="./js/offers.js"></script>
         <script src="./js/main.js"></script>
