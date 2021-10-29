@@ -3,109 +3,132 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="./css/style.css" />
         <title>Internet Já</title>
     </head>
     <body>
-        <header>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+        <header class="pages-header">
             <h1 class="home-title">Internet Já!</h1>
-            <h2>Adquira seu plano</h2>
+            <h2 class="home-title">Seja Bem Vindo!</h2>
         </header>
         <main>
-            <header>
-                <h2>Faça seu cadastro!</h2>
-                <p>É simples, rápido e GRÁTIS!</p>
-            </header>
-            <form onsubmit="getFullAddress()">
-                <fieldset class="form-adress">
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label for="cep"><b>CEP</b></label>
-                            <input
-                                class="form-input"
-                                type="text"
-                                name="cep"
-                                id="cep"
-                                autofocus
-                                onblur="pesquisaCep(this.value)"
-                                onkeypress="mascaraCep()"
-                                maxlength="9"
-                                required
-                            />
-                        </div>
+            <div class="main-container">
+                <header class="secondary-header">
+                    <div>
+                        <h2>Adquira seu plano</h2>
+                        <h3>Faça seu cadastro!</h3>
+                        <p>É simples, rápido e GRÁTIS!</p>
+                    </div>
+                    <img
+                        class="img-home"
+                        src="./img/internet-girl.jpg"
+                        alt="Mulher com seu cão olhando computador"
+                    />
+                </header>
+                <form class="form-container" onsubmit="getFullAddress()">
+                    <fieldset class="form-address">
+                        <legend class="form-legend">Digite seu CEP para ver as ofertas disponíveis</legend>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="cep"><b>CEP:</b></label>
+                                <input
+                                    class="form-input"
+                                    type="text"
+                                    name="cep"
+                                    id="cep"
+                                    autofocus
+                                    onblur="pesquisaCep(this.value)"
+                                    onkeypress="mascaraCep()"
+                                    maxlength="9"
+                                    required
+                                />
+                            </div>
 
-                        <div class="form-col">
-                            <label for="estado"><strong>Estado</strong></label>
+                            <div class="form-col">
+                                <label for="estado"><strong>Estado:</strong></label>
+                                <input
+                                    class="form-input"
+                                    type="text"
+                                    name="estado"
+                                    id="estado"
+                                    required
+                                    readonly
+                                />
+                            </div>
+
+                            <div class="form-col">
+                                <label for="cidade"><strong>Cidade:</strong></label>
+                                <input
+                                    class="form-input"
+                                    type="text"
+                                    name="cidade"
+                                    id="cidade"
+                                    required
+                                    readonly
+                                />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label for="endereco"><strong>Endereço:</strong></label>
                             <input
                                 class="form-input"
                                 type="text"
-                                name="estado"
-                                id="estado"
+                                name="endereco"
+                                id="endereco"
                                 required
                                 readonly
                             />
                         </div>
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="numero-endereco"><b>Número:</b></label>
+                                <input
+                                    class="form-input"
+                                    type="text"
+                                    name="numero-endereco"
+                                    id="numero-endereco"
+                                    required
+                                />
+                            </div>
 
-                        <div class="form-col">
-                            <label for="cidade"><strong>Cidade</strong></label>
-                            <input
-                                class="form-input"
-                                type="text"
-                                name="cidade"
-                                id="cidade"
-                                required
-                                readonly
-                            />
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <label for="endereco"><strong>Endereço</strong></label>
-                        <input
-                            class="form-input"
-                            type="text"
-                            name="endereco"
-                            id="endereco"
-                            required
-                            readonly
-                        />
-                    </div>
-                    <div class="form-row">
-                        <div class="form-col">
-                            <label for="numero-endereco"><b>Numero</b></label>
-                            <input
-                                class="form-input"
-                                type="text"
-                                name="numero-endereco"
-                                id="numero-endereco"
-                                required
-                            />
-                        </div>
+                            <div class="form-col">
+                                <label for="complemento-endereco"><b>Complemento:</b></label>
+                                <input
+                                    class="form-input"
+                                    type="text"
+                                    name="complemento-endereco"
+                                    id="complemento-endereco"
+                                />
+                            </div>
 
-                        <div class="form-col">
-                            <label for="complemento-endereco"><b>Complemento</b></label>
-                            <input
-                                class="form-input"
-                                type="text"
-                                name="complemento-endereco"
-                                id="complemento-endereco"
-                            />
+                            <div class="form-col">
+                                <label for="bairro"><strong>Bairro:</strong></label>
+                                <input
+                                    class="form-input"
+                                    type="text"
+                                    name="bairro"
+                                    id="bairro"
+                                    required
+                                    readonly
+                                />
+                            </div>
                         </div>
-
-                        <div class="form-col">
-                            <label for="bairro"><strong>Bairro</strong></label>
-                            <input
-                                class="form-input"
-                                type="text"
-                                name="bairro"
-                                id="bairro"
-                                required
-                                readonly
-                            />
-                        </div>
-                    </div>
-                </fieldset>
-                <button type="submit" onclick="getFullAddress()" class="btn-success">Avançar</button>
-            </form>
+                    </fieldset>
+                    <button type="submit" onclick="getFullAddress()" class="btn-primary">
+                        Avançar
+                    </button>
+                </form>
+            </div>
         </main>
         <script src="./js/offers.js"></script>
         <script src="./js/main.js"></script>
