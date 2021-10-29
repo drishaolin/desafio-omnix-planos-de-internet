@@ -6,13 +6,13 @@ function newElement(element, elementClass, text) {
     return e;
 }
 
+const formattedNumber = (n) => new Intl.NumberFormat("pt-br").format(n);
 function showOffers() {
-    console.log(localStorage.getItem("Address"));
     document.getElementById("selected-address").innerText = localStorage.getItem("Address");
     for (const offer of offers.userData.offers) {
         const div = newElement("div", "offer-item");
         const h2 = newElement("h2", "offer-name", offer.name);
-        const p = newElement("p", "offer-price", `R$ ${offer.price}`);
+        const p = newElement("p", "offer-price", `R$ ${formattedNumber(offer.price)}`);
         const btn = newElement("button", "btn-secondary", "Adquira já!");
         div.appendChild(h2);
         div.appendChild(btn);
