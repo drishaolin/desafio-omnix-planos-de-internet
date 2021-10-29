@@ -63,7 +63,9 @@ body {
     width: 25rem;
     height: 20rem;
     object-fit: cover;
-
+}
+h2.home-title {
+    font-size: 3rem;
 }
 
 /* -------------------BUTTONS----------------------- */
