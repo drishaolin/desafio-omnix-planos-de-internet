@@ -13,7 +13,9 @@ function showOffers() {
         const div = newElement("div", "offer-item");
         const h2 = newElement("h2", "offer-name", offer.name);
         const p = newElement("p", "offer-price", `R$ ${offer.price}`);
+        const btn = newElement("button", "btn-secondary", "Adquira já!");
         div.appendChild(h2);
+        div.appendChild(btn);
         div.appendChild(p);
 
         document.getElementById("offers-list").appendChild(div);
@@ -81,10 +83,12 @@ function pesquisaCep(valor) {
 //-----------------------ON FORM SUBMIT, GET FULL ADDRESS------------------------
 function getFullAddress() {
     const fullAddress = `
-    ${document.getElementById("endereco").value} - ${document.getElementById("bairro").value}, ${
-        document.getElementById("cidade").value
-    } - ${document.getElementById("estado").value}
+    ${document.getElementById("endereco").value}, ${
+        document.getElementById("numero-endereco").value
+    } - ${document.getElementById("bairro").value}, ${document.getElementById("cidade").value} - ${
+        document.getElementById("estado").value
+    }
     `;
     localStorage.setItem("Address", fullAddress);
-    window.open('../offers.html');
+    window.open("../offers.html");
 }
